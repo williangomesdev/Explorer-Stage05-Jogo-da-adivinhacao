@@ -2,11 +2,14 @@ const randomNumber = Math.round(Math.random() * 10);
 const screen1 = document.querySelector(".screen1");
 const screen2 = document.querySelector(".screen2");
 const screen2title = document.querySelector(".screen2 h2");
+const btnTry = document.querySelector("#btnTry");
+const btnReset = document.querySelector("#btnReset");
 let xAttempts = 1;
 
 console.log(randomNumber);
 
-function handleOnClick(event) {
+//callback function
+function handleTryClick(event) {
   event.preventDefault();
 
   const inputNumber = document.querySelector("#inputNumber");
@@ -24,11 +27,17 @@ function handleOnClick(event) {
     window.alert("Que pena, infelizmente você errou! tente novamente!");
   }
 
+  inputNumber.value = "";
   xAttempts++;
 }
 
-function handleBackOnClick(event) {
+function handleResetClick(event) {
   event.preventDefault();
   screen2.classList.add("hide");
   screen1.classList.remove("hide");
+  xAttempts = 1;
 }
+
+//Eventos
+btnTry.addEventListener("click", handleTryClick);
+btnReset.addEventListener("click", handleResetClick);

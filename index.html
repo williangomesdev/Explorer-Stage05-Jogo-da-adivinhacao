@@ -20,16 +20,12 @@
         <p>Adivinhe o número entre 0 e 10</p>
         <form>
           <input type="number" name="" id="inputNumber" />
-          <input onclick="handleOnClick(event)" type="button" value="Tentar" />
+          <input id="btnTry" type="button" value="Tentar" />
         </form>
       </div>
       <div class="screen2 hide">
         <h2>Acertou em 3 vezes</h2>
-        <input
-          onclick="handleBackOnClick(event)"
-          type="button"
-          value="Jogar Novamente"
-        />
+        <input id="btnReset" type="button" value="Jogar Novamente" />
       </div>
     </main>
     <script src="./main.js"></script>
